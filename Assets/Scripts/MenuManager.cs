@@ -14,16 +14,7 @@ public class MenuManager : MonoBehaviour
     {
         MenuAutoChangerByClick();
     }
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void SelectMenu(int menuIndex)
     {
         if(menuIndex == 0)
