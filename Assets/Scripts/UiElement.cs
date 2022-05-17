@@ -5,8 +5,6 @@ using UnityEngine;
 public class UiElement : BaseUi
 {
     [SerializeField]
-    private GameObject BodyOfElement;
-    [SerializeField]
     private string NameOfElement="ElementName";
     [SerializeField]
     private string DescriptionOfElement = "ElementDescription";
@@ -19,14 +17,11 @@ public class UiElement : BaseUi
     {
         base.UiSetDescription(DescriptionOfElement);
     }
-    protected override void SetUiBody(GameObject Body)
-    {
-        base.SetUiBody(BodyOfElement);
-    }
+
 
     private void OnMouseEnter()
     {
-        Invoke("ShowUiElement", 1);
+        Invoke("ShowUiElement", 1.5f);
     }
     private void OnMouseExit()
     {

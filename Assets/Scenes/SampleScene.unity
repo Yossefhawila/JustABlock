@@ -262,8 +262,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 107, y: -75}
-  m_SizeDelta: {x: 160, y: 43.729996}
+  m_AnchoredPosition: {x: 168.85, y: -123.5}
+  m_SizeDelta: {x: 298.25, y: 169.85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &149935314
 MonoBehaviour:
@@ -295,7 +295,7 @@ MonoBehaviour:
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
+    m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Description
@@ -393,7 +393,7 @@ GameObject:
   - component: {fileID: 290597089}
   m_Layer: 5
   m_Name: InfoUI
-  m_TagString: Untagged
+  m_TagString: InfoUi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -431,6 +431,8 @@ GameObject:
   - component: {fileID: 302721028}
   - component: {fileID: 302721027}
   - component: {fileID: 302721026}
+  - component: {fileID: 302721029}
+  - component: {fileID: 302721030}
   m_Layer: 5
   m_Name: SellPriceIncreaser
   m_TagString: Untagged
@@ -539,6 +541,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 302721024}
   m_CullTransparentMesh: 1
+--- !u!114 &302721029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302721024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cb8159addd0be54f91bb5b29974b5c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NameOfElement: S.P.I.
+  DescriptionOfElement: 'Sel Pricce Increaser: Increasing the price of selling single
+    block'
+--- !u!61 &302721030
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302721024}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 3.364437, y: 0.4205551}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 144.82944, y: 149.87608}
+  m_EdgeRadius: 0
 --- !u!1 &331553048
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,6 +673,8 @@ GameObject:
   - component: {fileID: 338495046}
   - component: {fileID: 338495045}
   - component: {fileID: 338495044}
+  - component: {fileID: 338495047}
+  - component: {fileID: 338495048}
   m_Layer: 5
   m_Name: BuyPriceDecreaser
   m_TagString: Untagged
@@ -738,6 +783,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 338495042}
   m_CullTransparentMesh: 1
+--- !u!114 &338495047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338495042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cb8159addd0be54f91bb5b29974b5c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NameOfElement: B.P.D.
+  DescriptionOfElement: 'Buy Pricce Decreaser: Decreasing the price of buying single
+    block'
+--- !u!61 &338495048
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338495042}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 3.7726212, y: -1.8863277}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 148.13274, y: 57.589474}
+  m_EdgeRadius: 0
 --- !u!1 &383006173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1719,7 +1805,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb8159addd0be54f91bb5b29974b5c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BodyOfElement: {fileID: 290597088}
   NameOfElement: Shop
   DescriptionOfElement: Just the game shop
 --- !u!61 &1302201991
