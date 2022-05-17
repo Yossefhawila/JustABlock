@@ -7,6 +7,10 @@ TagManager:
   - NameText
   - DescriptionText
   - InfoUi
+  - YesNoUi
+  - YesNameText
+  - YesDiscriptionText
+  - YesButton
   layers:
   - Default
   - TransparentFX

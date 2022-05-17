@@ -9,10 +9,13 @@ public class PlayerData : MonoBehaviour
 {
     public static PlayerData instance { get; private set; }
 
-    public float SellMultiplier { get; private set; }
-    public float BuyMultiplier { get; private set; }
-    public float ClickMultiplier { get; private set; }
-    public float PriceForClick { get; private set; }
+    public double MaterialValue;
+    public double SellPrice;
+    public double SellMultiplier;
+    public double BuyPrice;
+    public double BuyMultiplier;
+    public double ClickMultiplier;
+    public double PriceForClick;
     private double _playerMoneyValue;
     public double PlayerMoneyValue 
     { 

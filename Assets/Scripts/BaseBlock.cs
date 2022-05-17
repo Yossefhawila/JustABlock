@@ -57,7 +57,7 @@ public abstract class BaseBlock : MonoBehaviour
             block.SetActive(true);
         }
     }
-    private void Awake()
+    private void Start()
     {
         SetBlockData();
     }

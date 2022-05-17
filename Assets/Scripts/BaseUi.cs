@@ -8,8 +8,8 @@ public abstract class BaseUi : MonoBehaviour
     protected string NameTitle;
     protected string description;
     protected GameObject UiBody;
-    private Text NameText;
-    private Text DescriptionText;
+    protected Text NameText;
+    protected Text DescriptionText;
 
 
     protected virtual void SetUiBody(GameObject Body )
@@ -32,7 +32,7 @@ public abstract class BaseUi : MonoBehaviour
         DescriptionText.text = description;
     }
 
-    protected  void showUi()
+    protected virtual void showUi()
     {
         UiSetName("Name");
         UiSetDescription("Description");
@@ -42,11 +42,11 @@ public abstract class BaseUi : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    private void Awake()
+    protected virtual void Awake()
     {
         SetUiBody(GameObject.FindGameObjectWithTag("InfoUi"));
     }
-    private void HideUi()
+    protected void HideUi()
     {
         UiBody.SetActive(false);
     }
