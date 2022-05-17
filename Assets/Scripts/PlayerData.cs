@@ -10,13 +10,17 @@ public class PlayerData : MonoBehaviour
     public static PlayerData instance { get; private set; }
 
     public double MaterialValue;
+    public double MaterialValueUpgrade=20000;
     public double SellPrice;
     public double SellMultiplier;
+    public double SellMultiplierUpgrade=500;
     public double BuyPrice;
-    public double BuyMultiplier;
+    public double BuyPriceMultiplier;
+    public double BuyPriceMultiplierUpgrade=1000;
     public double ClickMultiplier;
-    public double PriceForClick;
-    private double _playerMoneyValue;
+    public double ClickMultiplierupgrade=100;
+
+    private double _playerMoneyValue=100000000;
     public double PlayerMoneyValue 
     { 
         get 
@@ -45,11 +49,11 @@ public class PlayerData : MonoBehaviour
         PlayerMoneyValue += Amount;
         PlayerMoneyTextInUi.text = getMoneyText(PlayerMoneyValue);
     }
-    private string getMoneyText(double MOneyhere)
+    public string getMoneyText(double MOneyhere)
     {
         string sympol = "";
 
-        string[] MoneySympols = { "K", "M", "B", "p", "o", "O", "a", "s", "q", "d", "f", "g", "h", "i", "l", "z", "x" };
+        string[] MoneySympols = { "K", "M", "B", "p", "a", "s", "q", "d", "f", "g", "h", "i", "l", "z", "x" };
 
 
         double MoneyVAL = MOneyhere;

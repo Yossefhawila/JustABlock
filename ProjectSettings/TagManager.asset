@@ -11,6 +11,7 @@ TagManager:
   - YesNameText
   - YesDiscriptionText
   - YesButton
+  - NoButton
   layers:
   - Default
   - TransparentFX

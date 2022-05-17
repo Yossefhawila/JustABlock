@@ -27,6 +27,10 @@ public class UiElement : BaseUi
     {
         CancelInvoke("ShowUiElement");
     }
+    private void OnMouseDown()
+    {
+        CancelInvoke("ShowUiElement");
+    }
 
     public void ShowUiElement()
     {

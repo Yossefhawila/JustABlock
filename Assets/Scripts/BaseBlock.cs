@@ -6,12 +6,11 @@ public abstract class BaseBlock : MonoBehaviour
 {
     protected double MaterialValue =10;
     protected double BuyPrice =0;
+    protected double BuyPriceMultiplier;
     protected double SellPrice =1;
     protected double NowSellPrice;
     protected double SellMultiplier;
-    protected double BuyMultiplier;
     protected double ClickMultiplier;
-    protected double PriceForClick;
 
 
 
@@ -50,17 +49,14 @@ public abstract class BaseBlock : MonoBehaviour
     }
     protected void BuyBlock(GameObject block)
     {
-        if (BuyPrice < PlayerData.instance.PlayerMoneyValue&&!block.activeInHierarchy)
+        if (BuyPrice <= PlayerData.instance.PlayerMoneyValue&&!block.activeInHierarchy)
         {
-            PlayerData.instance.ADDMoney(-BuyPrice);
+            PlayerData.instance.ADDMoney(-BuyPrice*BuyPriceMultiplier);
             
             block.SetActive(true);
         }
     }
-    private void Start()
-    {
-        SetBlockData();
-    }
+ 
 
     protected void ActiveBlock(GameObject block)
     {
