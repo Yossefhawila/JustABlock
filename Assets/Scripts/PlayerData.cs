@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayerData : MonoBehaviour
 
 {
-    public PlayerData instance { get; private set; }
+    public static PlayerData instance { get; private set; }
 
     public float SellMultiplier { get; private set; }
     public float BuyMultiplier { get; private set; }
@@ -34,11 +34,14 @@ public class PlayerData : MonoBehaviour
         }
    
     }
-    private string PlayerMoneyTextInUi;
-    
-    
-    
 
+    private Text PlayerMoneyTextInUi;
+    
+    public void ADDMoney(double Amount)
+    {
+        PlayerMoneyValue += Amount;
+        PlayerMoneyTextInUi.text = getMoneyText(PlayerMoneyValue);
+    }
     private string getMoneyText(double MOneyhere)
     {
         string sympol = "";
@@ -81,6 +84,11 @@ public class PlayerData : MonoBehaviour
 
     }
 
- 
+    private void Awake()
+    {
+        instance = this;
+        PlayerMoneyTextInUi = gameObject.GetComponent<Text>();  
+    }
+
 
 }

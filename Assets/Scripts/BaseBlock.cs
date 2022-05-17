@@ -4,28 +4,70 @@ using UnityEngine;
 
 public abstract class BaseBlock : MonoBehaviour
 {
-    protected float MaterialValue=10;
-    protected float BuyPrice=0;
-    protected float SellPrice=1;
-    protected float NowSellPrice;
-    protected float SellMultiplier;
-    protected float BuyMultiplier;
-    protected float ClickMultiplier;
-    protected float PriceForClick;
+    protected double MaterialValue =10;
+    protected double BuyPrice =0;
+    protected double SellPrice =1;
+    protected double NowSellPrice;
+    protected double SellMultiplier;
+    protected double BuyMultiplier;
+    protected double ClickMultiplier;
+    protected double PriceForClick;
 
+
+
+    protected abstract void SetBlockData();
     
-
-    protected virtual float GetAmount()
+    protected virtual double GetAmount()
     {
-        float amount =MaterialValue*ClickMultiplier;
+        double amount =MaterialValue*ClickMultiplier;
         return amount;
     } 
-    protected virtual void IncreasePrice(float Amout)
+    protected  void IncreasePrice(GameObject block)
     {
-        NowSellPrice += Amout;
+        if (block.activeInHierarchy)
+        {
+            NowSellPrice += GetAmount();
+        }
+        else 
+        {
+            BuyBlock(block);
+        }
     }
-    protected virtual void sellBlock(float Amount)
+    protected virtual double GetSellPrice()
     {
+        return SellMultiplier * NowSellPrice;
+    }
+    protected  void sellBlock(GameObject block)
+    {
+        if (block.activeInHierarchy)
+        {
+            PlayerData.instance.ADDMoney(GetSellPrice());
 
+            DeActiveBlock(block);
+        }
+        
+
+    }
+    protected void BuyBlock(GameObject block)
+    {
+        if (BuyPrice < PlayerData.instance.PlayerMoneyValue&&!block.activeInHierarchy)
+        {
+            PlayerData.instance.ADDMoney(-BuyPrice);
+            
+            block.SetActive(true);
+        }
+    }
+    private void Awake()
+    {
+        SetBlockData();
+    }
+
+    protected void ActiveBlock(GameObject block)
+    {
+        block.SetActive(true);
+    }
+    protected void DeActiveBlock(GameObject block)
+    {
+        block.SetActive(false);
     }
 }
