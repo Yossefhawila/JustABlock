@@ -6,6 +6,7 @@ TagManager:
   tags:
   - NameText
   - DescriptionText
+  - InfoUi
   layers:
   - Default
   - TransparentFX

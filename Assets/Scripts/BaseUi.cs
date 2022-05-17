@@ -11,12 +11,14 @@ public abstract class BaseUi : MonoBehaviour
     private Text NameText;
     private Text DescriptionText;
 
+
     protected virtual void SetUiBody(GameObject Body )
     {
+        
         UiBody = Body;
         NameText = GameObject.FindGameObjectWithTag("NameText").GetComponent<Text>();
         DescriptionText = GameObject.FindGameObjectWithTag("DescriptionText").GetComponent<Text>();
-
+        Invoke("HideUi",0.01f);
     }
     protected virtual void UiSetName(string NameTitle)
     {
@@ -32,20 +34,17 @@ public abstract class BaseUi : MonoBehaviour
 
     protected  void showUi()
     {
+        UiSetName("Name");
+        UiSetDescription("Description");
         UiBody.SetActive(true);
-        Invoke("HideUi", 2);
+        Invoke("HideUi", 2.1f);
 
     }
 
     // Start is called before the first frame update
     private void Awake()
     {
-        SetUiBody(UiBody);
-        UiSetName("Name");
-        UiSetDescription("Description");
-        UiBody.SetActive(false);
-
-
+        SetUiBody(GameObject.FindGameObjectWithTag("InfoUi"));
     }
     private void HideUi()
     {
