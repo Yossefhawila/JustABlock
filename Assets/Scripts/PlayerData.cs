@@ -20,7 +20,7 @@ public class PlayerData : MonoBehaviour
     public double ClickMultiplier;
     public double ClickMultiplierupgrade=100;
 
-    private double _playerMoneyValue=100000000;
+    private double _playerMoneyValue=0;
     public double PlayerMoneyValue 
     { 
         get 

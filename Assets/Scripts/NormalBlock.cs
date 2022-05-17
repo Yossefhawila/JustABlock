@@ -10,6 +10,8 @@ public class NormalBlock : BaseBlock
 
     [SerializeField]
     private Button Sellbutton;
+    [SerializeField]
+    private Text BlockPrice;
 
     protected override void SetBlockData()
     {
@@ -25,11 +27,14 @@ public class NormalBlock : BaseBlock
     public void BlockClicked()
     {
         IncreasePrice(gameObject.transform.GetChild(0).gameObject);
+        BlockPrice.text= PlayerData.instance.getMoneyText((SellMultiplier * NowSellPrice) - 1);
     }
     public void sellClicked()
     {
         sellBlock(gameObject.transform.GetChild(0).gameObject);
         SetBlockData();
+        BlockPrice.text = PlayerData.instance.getMoneyText((SellMultiplier * NowSellPrice)-1);
+
     }
     private void Start()
     {

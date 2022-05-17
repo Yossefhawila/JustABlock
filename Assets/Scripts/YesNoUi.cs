@@ -154,6 +154,10 @@ public class YesNoUi : BaseUi
 
         }
     }
+    private void GetMoney()
+    {
+        
+    }
 
 
 
