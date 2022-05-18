@@ -8,6 +8,7 @@ using System.IO;
 public class PlayerData : MonoBehaviour
 
 {
+    // ENCAPSULATION
     public static PlayerData instance { get; private set; }
 
     public double MaterialValue;
@@ -23,6 +24,7 @@ public class PlayerData : MonoBehaviour
 
 
     private double _playerMoneyValue=0;
+    // ENCAPSULATION
     public double PlayerMoneyValue 
     { 
         get 
@@ -45,13 +47,16 @@ public class PlayerData : MonoBehaviour
     }
 
     private Text PlayerMoneyTextInUi;
-    
+
+    // ABSTRACTION
     public void ADDMoney(double Amount)
     {
-        SaveData();
+   
         PlayerMoneyValue += Amount;
         PlayerMoneyTextInUi.text = getMoneyText(PlayerMoneyValue);
+        SaveData();
     }
+    // ABSTRACTION
     public string getMoneyText(double MOneyhere)
     {
         string sympol = "";
@@ -94,6 +99,7 @@ public class PlayerData : MonoBehaviour
 
     }
 
+    // ABSTRACTION // POLYMORPHISM
     private void Awake()
     {
         if (File.Exists(Application.persistentDataPath + "/jsonData.json"))
@@ -104,7 +110,7 @@ public class PlayerData : MonoBehaviour
         PlayerMoneyTextInUi = gameObject.GetComponent<Text>();
         PlayerMoneyTextInUi.text = getMoneyText(PlayerMoneyValue);
     }
-
+    //saveDataClass
     [SerializeField]
     class PlayerGameData 
     {
@@ -120,7 +126,9 @@ public class PlayerData : MonoBehaviour
         public double ClickMultiplierupgrade = 100;
         public double PlayerMoney;
     }
-    private void SaveData()
+
+    // ABSTRACTION
+    public void SaveData()
     {
         PlayerGameData data = new PlayerGameData();
         data.MaterialValue = MaterialValue;
@@ -139,7 +147,8 @@ public class PlayerData : MonoBehaviour
         File.WriteAllText(Application.persistentDataPath + "/jsonData.json", JsonData);
 
     }
-    
+
+    // ABSTRACTION 
     private void LoadData()
     {
         PlayerGameData data = new PlayerGameData();

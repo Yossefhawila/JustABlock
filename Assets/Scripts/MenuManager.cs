@@ -2,19 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
 public class MenuManager : MonoBehaviour
 {
     int currentMenu = 1;
+    // ENCAPSULATION
     [SerializeField]
     private GameObject Mainmenu;
+    // ENCAPSULATION
     [SerializeField]
     private GameObject ShopMenu;
-    // Start is called before the first frame update
+
+    // ABSTRACTION // POLYMORPHISM
     private void Awake()
     {
         MenuAutoChangerByClick();
     }
-
+    // ABSTRACTION
     private void SelectMenu(int menuIndex)
     {
         if(menuIndex == 0)
@@ -30,6 +34,7 @@ public class MenuManager : MonoBehaviour
             currentMenu = 1;
         }
     }
+    // ABSTRACTION
     public void MenuAutoChangerByClick()
     {
         if (currentMenu == 0)
